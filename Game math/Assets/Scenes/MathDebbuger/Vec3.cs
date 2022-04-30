@@ -141,7 +141,7 @@ namespace CustomMath
             }
 
             float clamp = Mathf.Clamp(Dot(from, to) / sqrt, -1f, 1f);
-            return (float)Math.Acos(clamp) * Mathf.Deg2Rad * 180; // conversion a radianes
+            return (float)Math.Acos(clamp) * Mathf.Deg2Rad * 180;
         }
 
         public static Vec3 ClampMagnitude(Vec3 vec3, float maxLength)
