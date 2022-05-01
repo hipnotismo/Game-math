@@ -3,8 +3,8 @@ using CustomMath;
 
 public class EJ1 : MonoBehaviour
 {
-    [SerializeField, Range(.1f, 1)] float lerpSpeed = .2f;
-    [SerializeField, Range(1, 10)] int exerciseIndex = 1;
+    [SerializeField] float lerpSpeed = .2f;
+    [SerializeField] int exerciseIndex = 1;
     [SerializeField] Vector3 vectorA;
     [SerializeField] Vector3 vectorB;
 
@@ -43,8 +43,10 @@ public class EJ1 : MonoBehaviour
                 vecC = vecA + vecB;
                 break;
             case 2:
+                vecC = vecB - vecA;
                 break;
             case 3:
+                vecC = new Vec3(vecA.x * vecB.x, vecA.y * vecB.y, vecA.z * vecB.z);
                 break;
             case 4:
                 break;
