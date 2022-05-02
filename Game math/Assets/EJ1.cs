@@ -12,7 +12,7 @@ public class EJ1 : MonoBehaviour
     Vec3 vecB = Vec3.Zero;
     Vec3 vecC = Vec3.Zero;
 
-    float lerpTime = 0;
+    float lerpTimeExercise5 = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,6 @@ public class EJ1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lerpTime = lerpTime > 1 ? 0 : lerpTime + Time.deltaTime * lerpSpeed;
 
         switch (exerciseIndex)
         {
@@ -49,12 +48,18 @@ public class EJ1 : MonoBehaviour
                 vecC = new Vec3(vecA.x * vecB.x, vecA.y * vecB.y, vecA.z * vecB.z);
                 break;
             case 4:
+                vecC = -Vec3.Cross(vecA, vecB);
                 break;
             case 5:
+                lerpTimeExercise5 = lerpTimeExercise5 > 1 ? 0 : lerpTimeExercise5 + Time.deltaTime;
+
+                vecC = Vec3.Lerp(vecA, vecB, lerpTimeExercise5);
                 break;
             case 6:
+                vecC = Vec3.Max(vecA, vecB);
                 break;
             case 7:
+                vecC = Vec3.Project(vecA, vecB);
                 break;
             case 8:
                 break;
